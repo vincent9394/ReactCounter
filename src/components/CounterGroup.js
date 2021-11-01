@@ -1,25 +1,29 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Counter from "./Counter";
 
-function CounterGroup(props){
-const [counterList,setCounterList] = useState([]);
-  
-useEffect(()=>{
+function CounterGroup(props) {
+  const [counterList, setCounterList] = useState([]);
+
+  useEffect(() => {
     const counters = new Array(props.counterSize).fill(Date.now());
     setCounterList(counters);
-}, [props.counterSize]
+  }, [props.counterSize]);
 
-)
-    
-    return (
-        <div>
-            {counterList.map((item, index)=>(
-                <Counter key = {item + index}></Counter>
+function increaseSum(){
+    props.increaseSum()
+}
 
-            ))}
-        </div>
-       
-    );
+function decreaseSum(){
+    props.decreaseSum()
+}
 
+
+  return (
+    <div>
+      {counterList.map((item, index) => (
+        <Counter key={item + index} increaseSum={increaseSum} decreaseSum={decreaseSum}></Counter>
+      ))}
+    </div>
+  );
 }
 export default CounterGroup;

@@ -1,8 +1,6 @@
 // import logo from './logo.svg';
-import './App.css';
-import MultiCounter from './components/MultiCounter';
-
-
+import "./App.css";
+import MultiCounter from "./components/MultiCounter";
 
 function App() {
   return (
