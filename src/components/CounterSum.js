@@ -1,16 +1,7 @@
-
 import React from "react";
 
-
-function CounterSum(props){
-  
-
-    return(
-        <div>
-        Sum: {props.sum}
-        </div>
-    )
-
+function CounterSum(props) {
+  return <div>Sum: {props.sum}</div>;
 }
 
-export default CounterSum
+export default CounterSum;
